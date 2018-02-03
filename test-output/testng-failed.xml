@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.paragon.netapp.tests.loginTest">
+        <methods>
+          <include name="TestCase01"/>
+          <include name="launchBrowser"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.paragon.netapp.tests.loginTest -->
+      <class name="com.paragon.netapp.tests.Test1">
+        <methods>
+          <include name="createUser"/>
+        </methods>
+      </class> <!-- com.paragon.netapp.tests.Test1 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
