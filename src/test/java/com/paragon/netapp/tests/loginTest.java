@@ -13,41 +13,13 @@ import org.testng.annotations.Test;
 
 import com.paragon.netapp.modules.LoginPage;
 
-public class loginTest
+public class loginTest extends BaseTest
 
 {
-	public static WebDriver driver;
-	String browser = "Chrome"; // browser can be brought from external properties file too
-	String APPURL = "http://dv2-ls-cts-1:4200/";
-
-	// @SuppressWarnings("deprecation")
-
-	@BeforeSuite
-	public void launchBrowser() throws Exception {
-		if (browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					".\\src\\main\\resources\\com\\paragon\\resources\\drivers\\chromedriver.exe");
-
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		} else if (browser.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		} else {
-			driver = new InternetExplorerDriver();
-		}
-	}
-
-	@BeforeMethod
-	public void launchApp() throws Exception {
-		driver.get(APPURL);
-		Thread.sleep(2000);
-	}
-
 	// We can use data provider to tests - using apache poi or from DB
 	@Test
-	public void TestCase01() throws Exception {
+	public void TestCase01() throws Exception 
+	{
 		LoginPage.loginToApp(driver, "jdortye@corp.com", "Paragon1a");
 
 		Thread.sleep(2000);
@@ -58,27 +30,9 @@ public class loginTest
 
 		Thread.sleep(2000);
 
-		
-	}
-	
-	@Test
-	public void TestCase02() throws Exception
-	{
-		LoginPage.clickAllTabs(driver);
-
-		Thread.sleep(10000);
-
-		LoginPage.newUserCreation(driver);
-
-		Thread.sleep(10000);
-
 		LoginPage.logoutFromApp(driver);
 	}
 	
-	// @AfterClass
-	// public void closeBrowser()
-	// {
-	// driver.close();
-	// driver.quit();
-	// }
+	
+	
 }
