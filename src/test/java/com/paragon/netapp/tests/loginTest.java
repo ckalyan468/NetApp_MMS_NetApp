@@ -1,17 +1,13 @@
 package com.paragon.netapp.tests;
 
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 import com.paragon.netapp.modules.LoginPage;
+
 
 public class loginTest extends BaseTest
 
@@ -20,19 +16,31 @@ public class loginTest extends BaseTest
 	@Test
 	public void TestCase01() throws Exception 
 	{
-		LoginPage.loginToApp(driver, "jdortye@corp.com", "Paragon1a");
+	LoginPage.loginToApp(driver, "jdortye@corp.com", "Paragon1a");
+  //Thread.sleep(10000); 
+				
+//		wait.until(ExpectedConditions.alertIsPresent());
 
-		Thread.sleep(2000);
-
-		driver.switchTo().alert().accept();
+	//	driver.switchTo().alert().accept();
+	
+		driver.navigate().refresh();
 
 		LoginPage.loginToApp(driver, "jdoe@corp.com", "123");
+		
+		WebElement wb=driver.findElement(By.partialLinkText("Home"));
 
-		Thread.sleep(2000);
-
-		LoginPage.logoutFromApp(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(wb));
+		
+		//driver.manage().window().maximize();
 	}
+
+@Test
+public void TestCas02() throws InterruptedException
+{
+
+	LoginPage.logoutFromApp(driver);
 	
 	
 	
+}
 }

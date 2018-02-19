@@ -3,18 +3,13 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
   <test verbose="0" name="Test(failed)">
     <classes>
-      <class name="com.paragon.netapp.tests.loginTest">
+      <class name="com.paragon.netapp.tests.TestUserScenarios">
         <methods>
-          <include name="TestCase01"/>
-          <include name="launchBrowser"/>
           <include name="launchApp"/>
+          <include name="addUser"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.paragon.netapp.tests.loginTest -->
-      <class name="com.paragon.netapp.tests.Test1">
-        <methods>
-          <include name="createUser"/>
-        </methods>
-      </class> <!-- com.paragon.netapp.tests.Test1 -->
+      </class> <!-- com.paragon.netapp.tests.TestUserScenarios -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

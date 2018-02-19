@@ -8,7 +8,22 @@
       			<include name="TestCase01"/>
       		</methods>  
       </class>
-      <class name="com.paragon.netapp.tests.Test1"/>
+      
+      <class name="com.paragon.netapp.tests.TestUserScenarios">
+      	<methods>
+
+<include name="loginToApp"></include>
+
+      		<include name="addUser"></include>
+     	 </methods>
+      </class>
+      
+       <class name="com.paragon.netapp.tests.loginTest">
+      		<methods>
+      			<include name="TestCase02"/>
+      		</methods>  
+     	</class>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
