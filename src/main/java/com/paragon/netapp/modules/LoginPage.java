@@ -13,6 +13,7 @@ public class LoginPage
 		driver.findElement(By.id("pwd1")).sendKeys(password);
 		driver.findElement(By.xpath("//button[text()='Login']")).click();
 		Thread.sleep(5000); 
+		
 		}
 
 	public static void logoutFromApp(WebDriver driver) throws InterruptedException {
