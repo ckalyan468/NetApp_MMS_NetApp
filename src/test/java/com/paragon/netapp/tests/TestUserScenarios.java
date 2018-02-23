@@ -26,7 +26,7 @@ public class TestUserScenarios extends BaseTest
 		NativeUser.newUserCreation(driver);
 				
 //		LoginPage.loginToApp(driver, "", ""); //login with new username
-	LoginPage.logoutFromApp(driver);
+
 	}
 	
 	@Test(priority=3)

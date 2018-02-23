@@ -11,9 +11,6 @@
       
       <class name="com.paragon.netapp.tests.TestUserScenarios">
       	<methods>
-
-<include name="loginToApp"></include>
-
       		<include name="addUser"></include>
      	 </methods>
       </class>

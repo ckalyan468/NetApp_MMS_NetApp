@@ -16,16 +16,20 @@ public class NativeUser
 		driver.findElement(By.xpath("//button[text()='Add User']")).click();
 
 		Thread.sleep(3000); 
-		
+		driver.findElement(By.name("firstName")).clear();
 		driver.findElement(By.name("firstName")).sendKeys("kalyan");
+		driver.findElement(By.name("lastName")).clear();
 		driver.findElement(By.name("lastName")).sendKeys("ckalya");
+		driver.findElement(By.name("password")).clear();
 		driver.findElement(By.name("password")).sendKeys("ckalya");
+		driver.findElement(By.name("confirmPassword")).clear();
 		driver.findElement(By.name("confirmPassword")).sendKeys("ckalya");
+		driver.findElement(By.name("email")).clear();
 		driver.findElement(By.name("email")).sendKeys("ckalyan468@gmail.com");
-		Select dropdown = new Select(driver.findElement(By.name("userRoleId")));
-		dropdown.selectByIndex(2);
+		Select dropdown = new Select(driver.findElement(By.name("userRole")));
+		dropdown.selectByVisibleText("ROLE_USER");
 		Select dropdown1 = new Select(driver.findElement(By.name("user.enabled")));
-		dropdown1.selectByIndex(0);
+		dropdown1.selectByVisibleText("Yes");
 
 // driver.findElement(By.cssSelector("div.modal-footer")).click();
 //		driver.findElement(By.xpath(".//*[class()='btn btn-primary']")).click(); 

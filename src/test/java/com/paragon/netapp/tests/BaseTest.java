@@ -11,16 +11,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import com.paragon.netapp.projectUtils.ProjectUtility;
+
 public class BaseTest
 {
 	public static WebDriver driver;
 	public WebDriverWait wait;
-	String browser = "Chrome"; // browser can be brought from external properties file too
-	String APPURL = "http://dv2-ls-cts-1:4200/";
+
 
 	@BeforeSuite
 	public void launchBrowser() throws Exception 
 	{
+		String browser=ProjectUtility.getProperty("Browser");
 		if (browser.equalsIgnoreCase("Chrome")) 
 		{
 			ChromeOptions options=new ChromeOptions();
@@ -51,6 +53,7 @@ public class BaseTest
 	@BeforeTest
 	public void launchApp() throws Exception 
 	{
+		String APPURL=ProjectUtility.getProperty("URL");
 		driver.get(APPURL);
 	}
 	
