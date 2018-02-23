@@ -9,7 +9,6 @@ public class NativeUser
 {
 	public static void newUserCreation(WebDriver driver) throws InterruptedException 
 	{
-		
 		Thread.sleep(3000); 
 		driver.findElement(By.linkText("Admin")).click();
 		driver.findElement(By.xpath("//*[text()='Native User Management']")).click();

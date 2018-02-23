@@ -11,7 +11,6 @@ import com.paragon.netapp.modules.LoginPage;
 
 public class TestUserScenarios extends BaseTest
 {
-
 	@Test(priority=1)
 	public void logintoApp() throws InterruptedException
 	{

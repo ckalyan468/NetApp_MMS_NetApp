@@ -3,6 +3,7 @@ package com.paragon.netapp.projectUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 public class DatabaseManager 
 {
 	public static Connection conn;

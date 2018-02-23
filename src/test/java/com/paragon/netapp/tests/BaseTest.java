@@ -18,6 +18,7 @@ public class BaseTest
 	public static WebDriver driver;
 	public WebDriverWait wait;
 
+	
 
 	@BeforeSuite
 	public void launchBrowser() throws Exception 

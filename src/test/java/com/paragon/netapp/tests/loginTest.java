@@ -17,6 +17,7 @@ public class loginTest extends BaseTest
 {
 	// We can use data provider to tests - using apache poi or from DB
 
+	
 	@Test (dataProvider="LoginTest",priority=1)
 	public void TestCase01(String iusername,String ipassword,String username,String password) throws Exception 
 	{
